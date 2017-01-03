@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Learn_RatingReview>
+            <version>1.0.0</version>
+        </Learn_RatingReview>
+    </modules>
+	
+    <global>
+		<blocks>
+         	<ratingreview>
+                <class>Learn_RatingReview_Block</class>
+            </ratingreview>
+        </blocks>
+
+        <helpers>
+            <ratingreview>
+                <class>Learn_RatingReview_Helper</class>
+            </ratingreview>
+        </helpers>
+		
+         <models>
+         	<ratingreview>
+                <class>Learn_RatingReview_Model</class>
+            </ratingreview>
+			<catalog>
+                <rewrite>
+                    <layer_filter_decimal>Learn_RatingReview_Model_Layer_Filter_Decimal</layer_filter_decimal>
+                </rewrite>
+            </catalog>
+			
+			<catalog_resource>
+                <rewrite>
+                    <layer_filter_decimal>Learn_RatingReview_Model_Resource_Layer_Filter_Decimal</layer_filter_decimal>
+                </rewrite>
+            </catalog_resource>
+			
+			
+        </models>
+		
+        <resources>
+            <ratingreview_setup>
+                <setup>
+                    <module>Learn_RatingReview</module>
+                    <class>Mage_Catalog_Model_Resource_Setup</class>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </ratingreview_setup>
+        </resources>
+    </global>
+	
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <Learn_RatingReview before="Mage_Adminhtml">Learn_RatingReview</Learn_RatingReview>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+	
+    <adminhtml>
+        <layout>
+            <updates>
+                <ratingreview>
+                    <file>learn/ratingreview.xml</file>
+                </ratingreview>
+            </updates>
+        </layout>
+    </adminhtml>
+	
+</config>
